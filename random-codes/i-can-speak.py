@@ -12,5 +12,4 @@ say=open('speech2.vbs','w+')
 say.write(content)
 say.close()
 text_file='speech2.vbs'
-#for i in range(3):
 os.startfile(text_file)
