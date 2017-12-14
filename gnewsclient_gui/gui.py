@@ -25,8 +25,16 @@ def lang_func(value):
 def submit():
 	print(E1.get())
 
-def fetch_news():
-	pass
+def create_window():
+    window = Toplevel(top)
+    # L1 = Label(window, text="Edition", fg="red")
+    # L1.grid(row=0, pady=10)
+    # options_edition = [key for key in utils.editionMap]
+    # var = StringVar()
+    # var.set(edition)
+    # drop = OptionMenu(window, var, *options_edition, command=edition_func)
+    # drop.grid(row=0, column=1, pady=10)
+
 
 # edition filter
 L1 = Label(top, text="Edition", fg="red")
@@ -65,7 +73,7 @@ E1 = Entry(top, bd =5)
 E1.grid(row=3, column=1, pady=10)
 
 # submit button
-submit_button = Button(top, text="Submit", command=submit)
+submit_button = Button(top, text="Submit", command=create_window)
 submit_button.grid(row=4, column=0, pady=10, columnspan=4)
 
 
