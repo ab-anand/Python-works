@@ -25,39 +25,51 @@ def lang_func(value):
 def submit():
 	print(E1.get())
 
-L1 = Label(top, text="Edition", padx=5, pady=5,fg="red")
-L1.pack( fill=X)
+def fetch_news():
+	pass
+
+# edition filter
+L1 = Label(top, text="Edition", fg="red")
+L1.grid(row=0, pady=10)
 options_edition = [key for key in utils.editionMap]
 var = StringVar()
+var.set(edition)
 drop = OptionMenu(top, var, *options_edition, command=edition_func)
-drop.pack(padx = 5, pady = 5, fill=X)
+drop.grid(row=0, column=1, pady=10)
 
-L2 = Label(top, text="Topic",fg="red")
-L2.pack(fill=X)
+
+# topic filter
+L2 = Label(top, text="Topic", fg="red")
+L2.grid(row=1, pady=10)
 options_topic = [key for key in utils.topicMap]
 var = StringVar()
+var.set(topic)
 drop = OptionMenu(top, var, *options_topic, command=topic_func)
-drop.pack(padx = 5, pady = 5, fill=X)
+drop.grid(row=1, column=1, pady=10)
 
-L3 = Label(top, text="Language",fg="red")
-L3.pack(fill=X)
+
+# language filter
+L3 = Label(top, text="Language", fg="red")
+L3.grid(row=2, pady=10)
 options_lang = [key for key in utils.langMap]
 var = StringVar()
+var.set(language)
 drop = OptionMenu(top, var, *options_lang, command=lang_func)
-drop.pack(padx = 5, pady = 5, fill=X)
+drop.grid(row=2, column=1, pady=10)
 
-L4 = Label(top, text="Location",fg="red")
-L4.pack(fill=X)
+
+# location filter
+L4 = Label(top, text="Location", fg="red")
+L4.grid(row=3, pady=10)
 E1 = Entry(top, bd =5)
-E1.pack(padx = 5, pady = 5, fill=X)
+E1.grid(row=3, column=1, pady=10)
 
-
+# submit button
 submit_button = Button(top, text="Submit", command=submit)
-submit_button.pack(fill=X)
-# Code to add widgets will go here...
+submit_button.grid(row=4, column=0, pady=10, columnspan=4)
 
 
-top.minsize(width=266, height=300)    
+top.minsize(width=266, height=200)    
 top.maxsize(width=666, height=666)
 top.resizable(width=False, height=False)
 top.mainloop()
